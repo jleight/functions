@@ -34,7 +34,7 @@ async function main(context: AzureFunctionContext): Promise<void> {
 }
 
 
-export default (context: AzureFunctionContext) => {
+export default function (context: AzureFunctionContext) {
     main(context)
         .then(() => context.done())
         .catch(e => context.done(e));

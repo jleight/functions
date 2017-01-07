@@ -1,5 +1,4 @@
 node_modules/
-*.js
+*/*.js
 !*/index.js
-!*/src/index.js
 env.ps1
