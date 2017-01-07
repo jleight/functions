@@ -1,0 +1,71 @@
+{
+    "rules": {
+        "adjacent-overload-signatures": true,
+        "member-access": [true, "check-accessor", "check-constructor"],
+        "no-inferrable-types": true,
+        "no-reference": true,
+        "no-var-requires": true,
+        "only-arrow-functions": [true, "allow-named-functions"],
+        "prefer-for-of": true,
+        "promise-function-async": true,
+        "typedef-whitespace": [true, {
+            "call-signature": "nospace",
+            "index-signature": "nospace",
+            "parameter": "nospace",
+            "property-declaration": "nospace",
+            "variable-declaration": "nospace"
+        }, {
+            "call-signature": "onespace",
+            "index-signature": "onespace",
+            "parameter": "onespace",
+            "property-declaration": "onespace",
+            "variable-declaration": "onespace"
+        }],
+        "unified-signatures": true,
+        "curly": true,
+        "no-console": true,
+        "no-construct": true,
+        "no-debugger": true,
+        "no-duplicate-variable": true,
+        "no-empty": true,
+        "no-eval": true,
+        "no-for-in-array": true,
+        "no-inferred-empty-object-type": true,
+        "no-invalid-this": true,
+        "no-shadowed-variable": true,
+        "no-string-throw": true,
+        "no-unsafe-finally": true,
+        "no-unused-expression": true,
+        "radix": true,
+        "triple-equals": [true, "allow-null-check", "allow-undefined-check"],
+        "typeof-compare": true,
+        "use-isnan": true,
+        "eofline": true,
+        "indent": [true, "spaces"],
+        "no-require-imports": true,
+        "no-trailing-whitespace": true,
+        "prefer-const": true,
+        "trailing-comma": [true, {
+            "multiline": "never",
+            "singleline": "never"
+        }],
+        "arrow-parens": [true, "ban-single-arg-parens"],
+        "class-name": true,
+        "import-spacing": true,
+        "new-parens": true,
+        "no-angle-bracket-type-assertion": true,
+        "no-consecutive-blank-lines": [true, 2],
+        "object-literal-key-quotes": [true, "consistent-as-needed"],
+        "object-literal-shorthand": true,
+        "one-line": [true, "check-catch", "check-finally", "check-else", "check-open-brace", "check-whitespace"],
+        "quotemark": [true, "single", "avoid-escape",  "jsx-double"],
+        "semicolon": [true, "always"],
+        "space-before-function-paren": [true, {
+            "anonymous": "always",
+            "named": "never",
+            "asyncArrow": "always"
+        }],
+        "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],
+        "whitespace": [true, "check-branch", "check-decl", "check-operator", "check-module", "check-separator", "check-type", "check-typecast"]
+    }
+}
