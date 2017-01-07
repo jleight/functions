@@ -5,7 +5,6 @@ module.exports = {
     output: {
         path: `${process.env.FunctionRelative}`,
         filename: 'index.js',
-        library: 'default',
         libraryTarget: 'commonjs2'
     },
     target: 'node',
