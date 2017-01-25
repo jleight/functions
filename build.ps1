@@ -88,7 +88,7 @@ function Invoke-BuildRun () {
     Set-FunctionEnvironment $Function
     
     Write-Host "[run:${env:FunctionName}] running function..." -ForegroundColor Cyan
-    &node -e "require('${env:FunctionRelative}')['default']({ log: x => console.log(x), done: e => e && console.log(e) });"
+    &node -e "require('${env:FunctionRelative}')['run']({ log: x => console.log(x), done: e => e && console.log(e) });"
     Write-Host "[run:${env:FunctionName}] done" -ForegroundColor Cyan
     Write-Host
 }
