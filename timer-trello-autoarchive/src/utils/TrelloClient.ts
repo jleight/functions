@@ -1,5 +1,5 @@
 import { request } from './wrappers';
-import { Card } from 'trello';
+import { Card, CardAction } from 'trello';
 
 
 const TRELLO_HOST = 'api.trello.com';
@@ -27,6 +27,10 @@ export default class TrelloClient {
 
     public async getCards(): Promise<Card[]> {
         return this.get(`lists/${this.list}/cards`);
+    }
+
+    public async getCardMoves(card: Card|string): Promise<CardAction[]> {
+        return this.get(`cards/${getId(card)}/actions?filter=updateCard:idList`);
     }
 
     public async archiveCard(card: Card|string): Promise<void> {
