@@ -22,14 +22,17 @@ async function main(context: AzureFunctionContext): Promise<void> {
         token: env(TOKEN_VAR),
         list: env(LIST_VAR)
     });
-
-    const cards = (await trello.getCards())
-        .filter(card => new Date(card.dateLastActivity).getDate() < TWO_WEEKS_AGO)
-        .reverse();
+    const cards = await trello.getCards();
 
     for (const card of cards) {
-        context.log(`card[${card.id}] = "${card.name}"`);
-        await trello.archiveCard(card);
+        const moves = (await trello.getCardMoves(card))
+            .filter(move => move.data.listAfter.id === env(LIST_VAR))
+            .map(move => new Date(move.date).getDate());
+
+        if (moves.length > 0 && Math.max.apply(null, moves) < TWO_WEEKS_AGO) {
+            context.log(`card[${card.id}] = "${card.name}"`);
+            await trello.archiveCard(card);
+        }
     }
 }
 
